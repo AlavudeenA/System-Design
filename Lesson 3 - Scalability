@@ -1,0 +1,49 @@
+With vertical scaling (“scaling up”), you're adding more compute power to your existing system/instances.
+In horizontal scaling (“scaling out”), you get the additional capacity in a system by adding more instances to your environment, sharing the processing and memory 
+workload across multiple devices instead of moving to a larger instance size(vertical scaling).
+
+System Load: Up to 1000+ users
+	Components to consider: An application server and a database.
+	Why? These are the basics of any system.
+	
+System Load: 1K - 10K users
+	Components to consider: Multiple servers and load balancing to distribute traffic, and simple leader-follower replication to eliminate failure points.
+	Why? Now you've got some volume. By horizontally scaling your system and directing traffic intelligently, you can serve more customers, reliably, without adding too much complexity or cost.
+		
+		Replication:  Data is copied at multiple locations (Different computers or servers) to improve the availability of data
+		
+		Leader-follower Replication: In this form of replication, all writes or other operations that change data are send to the replica appointed as the leader. After performing the changes locally the leader notifies the followers about the changes in data.
+		
+		Load Balancer: Load balancer distributes traffic to multiple servers
+		
+System Load: 100K users
+	Components to consider: CDNs and caches to decrease latency and rate-limiting to prevent abuse. You might consider switching to a microservice architecture.
+	Why? CDNs distributed regionally, reduce latency between requests as large assets are cached close to the point of delivery. If you expect your user base or product portfolio to continue to grow, you might consider switching to a microservice architecture to better direct future engineering efforts.
+	
+		Latency: The time required to transmit a message from one location to another within a distributed system.
+		
+		Bandwidth: The amount of data that can be transferred per unit of time in a stable state.
+		
+		Rate Limiter: In HTTP world, it is used to limit the number of client requests allowed to be processed over a specified period.
+		
+System Load: 1 million users
+	Components to consider: Database sharding and more advanced replication strategies (for example, leaderless replication) depending on your application.
+	Why? Even with top-of-the-line hardware, 1 million users is probably more than your system can handle. Sharding your database divides the data into clusters based on geography or function. If you're servicing lots of writes, you'll also want to upgrade your replicas as your leader(s) might struggle to cope with the added volume.
+	
+		Database Sharding:  Implies the data is spread across multiple computers. We are not duplicating any data here. 
+		
+		Database Sharding vs Replication:  Replication can be simply understood as the duplication of the data-set whereas sharding is partitioning the data-set into discrete parts.
+		
+		Leaderless replication: It adopts a philosophy that is contrary to that of leader-based replications. Nodes in the leaderless setting are considered peers and all of them accept writes and reads from the client. Without a leader that handles all write requests, leaderless replication offers better availability.
+		
+		
+System Load: 1 billion users
+	Components to consider: Time to consider regional strategies, especially if you have a few major markets across the globe. You may also want to migrate some of your data to NoSQL databases.
+	Why? Duplicating your system across regions will reduce latency and increase capacity. You may also want to explore NoSQL database options like graph databases and migrate accordingly.
+
+
+
+
+
+
+ 
