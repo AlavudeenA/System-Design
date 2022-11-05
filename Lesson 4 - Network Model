@@ -8,9 +8,9 @@ IP(Internet Protocol) Address is a numeric address. In real world, we check each
 				□ Is 192.168 a private IP address?
 				And don't be surprised if you have a device or two that connected to Wi-Fi router at home that starts with a so-called 192 IP address. This is called private IP address beginning with 192.168. This is the most common default private IP address format assigned to network routers in home around the globe. Private devices in home connects to public device using public ip address. Our ISP will provide one public IP address to our router through which all of our private devices like computer and mobile talks to outside world.
 				□ What if my mobile is not connected to Wi-Fi network or I am moving around outside?
-				In this case our mobile will have public IP address. Since there are billions of smart phones are being used all over the world, the 2^32 address space is not enough, in other words ip4 is not sufficient enough to provide individual address to each devices. This is why ip6 was introduced
+				In this case our mobile will have public IP address. Since there are billions of smart phones are being used all over the world, the 2^32 address space is not enough, in other words ip4 is not sufficient enough to provide individual address to each devices. This was the reason why IP6 was introduced.
 				
-	IP6: Next generation of IP address - 2^128. It is 128 bit hexadecimal(number + alphabets) address 
+	IP6: Next generation of IP address - 2^128. It is 128 bit hexadecimal address. This theoretically allows 2^128 combinations or 340 trillion, trillion, trillion addresses.
 			     Ex:  2001 : db8 : 3333 : 4444 : CCCC : DDDD : EEEE : FFFF
 			
 Do ipconfig in CMD prompt in computer or check Wi-Fi networks setting in phone. What do we see? We see Default Gateway, Subnet Mask and IP Addresses.
