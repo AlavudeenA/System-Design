@@ -20,8 +20,8 @@ Do ipconfig in CMD prompt in computer or check Wi-Fi networks setting in phone. 
 	Subnet Mask and IP address: 
 		○ In subnet mask, wherever we see 255, the corresponding IP address position is fixed. 
 		○ In our home wifi network, if we do ipconfig in command prompt of the computer, the IP address 192.168.1.* is fixed, because of subnet mask 255.255.255.0. So 255.255.255.0 means only last number is allowed to change from 0 to 255. This last number is called Host or the device that connected to our router Ex: Smart watch, Phone or computer that router connected to. IP address of our smart phone, connected to Wi-Fi router, could be 192.168.1.1 while our computer connected to same Wi-Fi router could be 192.168.1.2. 
-		○ Number 1 to 244 will be assigned by the router to our devices in last part of IP address, so we can connect total 244 range of devices. 
-While 0-225 is total of 256 devices, why only 224 devices, not 256? 192.168.1.0 and 192.168.1.255 are reserved addresses for subnet id and broadcast id/address respectively and can't be used and our router will not assign it to any device.
+		○ Number 1 to 254 will be assigned by the router to our devices in last part of IP address, so we can connect total 254 range of devices. 
+                  While 0-255 is total of 256 devices, why only 254 devices, not 256? 192.168.1.0 and 192.168.1.255 are reserved addresses for subnet id and broadcast id/address respectively and can't be used and our router will not assign it to any device.
 
 
 
