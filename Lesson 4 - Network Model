@@ -1,0 +1,149 @@
+What is IP?
+The Internet Layer in TCP/IP Model  - which we will talk about later, describes the much larger network of devices interconnected by IP addresses according to IP protocols (IPv4 or IPv6.)
+
+IP(Internet Protocol) Address is a numeric address. In real world, we check each other with phone number. Devices can’t. That’s why they have an IP address. Its an identifier for a computer or device on a network so that they can talk each other. 
+		
+	IP4: 32bit numeric address. Ex: 192.168.12.1
+				□ 2^32 which is roughly 4 billion devices can have IP address was not enough as number of devices got increased over the period of time. That’s the reason NAT - Network Address Translation was introduced. All devices inside network will have private address and the router will be assigned to public IP address.
+				□ Is 192.168 a private IP address?
+				And don't be surprised if you have a device or two that connected to Wi-Fi router at home that starts with a so-called 192 IP address. This is called private IP address beginning with 192.168. This is the most common default private IP address format assigned to network routers in home around the globe. Private devices in home connects to public device using public ip address. Our ISP will provide one public IP address to our router through which all of our private devices like computer and mobile talks to outside world.
+				□ What if my mobile is not connected to Wi-Fi network or I am moving around outside?
+				In this case our mobile will have public IP address. Since there are billions of smart phones are being used all over the world, the 2^32 address space is not enough, in other words ip4 is not sufficient enough to provide individual address to each devices. This is why ip6 was introduced
+				
+	IP6: Next generation of IP address - 2^128. It is 128 bit hexadecimal(number + alphabets) address 
+			     Ex:  2001 : db8 : 3333 : 4444 : CCCC : DDDD : EEEE : FFFF
+			
+Do ipconfig in CMD prompt in computer or check Wi-Fi networks setting in phone. What do we see? We see Default Gateway, Subnet Mask and IP Addresses.
+			
+	A default gateway is the piece of hardware that sits between your home network and rest of the internet. As the name suggests, it is the gateway between your local network and the rest of the internet. In most local networks, the default gateway is our Wi-fi router.
+			
+	Subnet Mask and IP address: 
+		○ In subnet mask, wherever we see 255, the corresponding IP address position is fixed. 
+		○ In our home wifi network, if we do ipconfig in command prompt of the computer, the IP address 192.168.1.* is fixed, because of subnet mask 255.255.255.0. So 255.255.255.0 means only last number is allowed to change from 0 to 255. This last number is called Host or the device that connected to our router Ex: Smart watch, Phone or computer that router connected to. IP address of our smart phone, connected to Wi-Fi router, could be 192.168.1.1 while our computer connected to same Wi-Fi router could be 192.168.1.2. 
+		○ Number 1 to 244 will be assigned by the router to our devices in last part of IP address, so we can connect total 244 range of devices. 
+While 0-225 is total of 256 devices, why only 224 devices, not 256? 192.168.1.0 and 192.168.1.255 are reserved addresses for subnet id and broadcast id/address respectively and can't be used and our router will not assign it to any device.
+
+
+
+TCP/IP vs OSI Model:
+In earlier times, Computers in the same network used packet switching to speak each other. But there is no protocol defined to let a computer from network A speak to another computer in network B. Because there is no standard defined. That’s where a meeting/committee sat and worked on defining a protocol to let the computer speak each other across the network. This is called networking model.
+
+When Apple or IBM or Microsoft makes computers, the model enforces to use the same technology so that all computers can interact with each other.
+
+There are well know two models were developed. 1 TCP/IP Model and 2. OSI model.
+
+TCP/IP Model  or stack uses four functions or layers. 
+1. Network Access  (L1)
+	Ethernet cables
+2. Internet  (L2)
+	IP address and routers
+3. Transport  (L3)
+	TCP/UDP
+4. Application  (L4)
+	HTTP/HTTPS
+	
+OSI Model or stack uses seven functions or layers. 
+
+Same as TCP/IP model but Network Access (aka Physical layer) in TCP/IP model is dived into - Physical and Data Link. Application layer divided into three - Application + Presentation + Session. These introduction of additional 3 layers made OSI model to have total 7 layers. 
+
+	1. Physical (L1)
+	2. Data Link(L2)
+	3. Network (L3)
+	4. Transport (L4)
+	5. Session (L5)
+	6. Presentation (L6)
+	7. Application (L7)
+
+But at the end the result is same, connecting devices across networks in internet.
+
+TCP/IP Model is widely used today and all computer supports it. TCP/IP model killed OSI Model in the war of implementation, because it was simpler. OSI model is still being used but majorly in theoretical.
+
+Devices and its relation to layers:
+Switch is being used in Network Access layer(L1) in TCP/IP Model and Data Link layer(L2) in OSI Model. Router is being used in Internet(L2) or Network layer(L3) in both TCP/IP Model and OSI Model respectively. Hubs and Repeaters is being used in Network Access layer(L1) or Physical layer(L1) in both TCP/IP Model and OSI Model respectively.
+
+
+
+TCP vs IP:
+TCP/IP is the most commonly used protocol suite used today. IP sets standards in the Internet layer (L2) level while TCP sets standards in the Transport layer (L3) level.
+
+How does it work?
+	Data packets are transmitted across network nodes/devices. The Internet Layer connects these nodes through IP addresses.
+	
+	Data packets sent over IP are often lost, dropped, or arrive out-of-order. We have no guarantee it was transmitted with out any fault. This is where another standards comes to the picture called TCP.
+	
+	TCP protocol operating in the transport Layer provides flow-control, establishes connections, and reliable transmission. 
+	
+TCP protocol was built with an emphasis on accuracy, so it's best used in applications where accuracy is more important than speed of delivery.
+
+
+
+TCP VS UDP:
+TCP and UDP both sets standards in the transport layer (L3). But its just that what we use in the given scenario. Together, TCP and UDP make up most internet traffic at the Transport Layer.
+
+TCP (Transmission Control Protocol)
+	TCP emphasizes accurate delivery rather than speed and enforces the "rules of the road", similar to a traffic cop. How? It's connection-oriented, which means that the server must be "listening" for connection requests from clients, and the client and server must be connected before any data is sent. Because it's a stateful protocol, context is embedded into the TCP segment ("packaged" segments of the data stream including a TCP header), meaning that TCP can detect errors (either lost or out-of-order data packets) and request re-transmission.
+
+UDP (User Datagram Protocol)
+	UDP also works with the IP protocol to transmit data. But it is a simpler alternative to TCP. UDP is connectionless, making it much faster than TCP, but because it has none of the error-handling capabilities of TCP, it's error-prone. UDP is mainly used for streaming applications such as Skype, where users accept occasional delays in exchange for real-time service.
+	
+
+
+HTTP:
+HTTP/HTTPS both sets standards in the Application layer (L4)
+
+HTTP (Hypertext Transport Protocol) is the original request-response application layer protocol designed to connect web traffic through hyperlinks. It's the main protocol used by everything connected to the Internet. 
+
+HTTP defines:
+
+	• A set of request methods (GET, POST, PUT, etc. - the same methods RESTful APIs use)
+	• Addresses (known as URLs)
+	• Default TCP/IP ports (port 80 for HTTP, port 443 for HTTPS).
+	
+Every time you visit a site with a http:// link, your browser makes a HTTP GET request for that URL.
+
+HTTP is still in use, but it's been largely replaced by HTTPS (Hypertext Transport Protocol Secure), which serves the same purpose but with much better security features. HTTPS uses TLS to achieve the security features.
+
+
+
+TLS:
+TLS is a protocol used to encrypt communications in the transport layer (L3). HTTPS works on top of TLS (Transport Layer Security) by default and is preventing unauthorized parties from listening in on communications. The process for initiating a secure session through TLS is called a TLS handshake.
+
+Here's what happens.
+	
+	The client requests to establish a secure connection with a server, usually by using port 443 which is reserved for TLS connections.
+	
+	The client and server agree to use a particular cipher suite (ciphers and hash functions.)
+	
+	The server submits a digital certificate which serves as proof of identity. Digital certificates are issued by 3rd party Certificate Authorities (CAs) and effectively vouch for the server.
+	
+	If the certificate is accepted by the client, the client will generate a session key which is used to encrypt any information transmitted during the session.
+	
+	Once the session key is created, the handshake is finished and the session begins. All data transmitted will now be encrypted.
+
+
+
+HTTP vs Websocket:
+HTTP:
+HTTP is unidirectional where the client sends the request and the server sends the response. Let’s take an example when a user sends a request to the server this request goes in the form of HTTP or HTTPS, after receiving a request server send the response to the client, each request is associated with a corresponding response, after sending the response the connection gets closed, each HTTP or HTTPS request establish the new connection to the server every time and after getting the response the connection gets terminated by itself. 
+HTTP is a stateless protocol that runs on top of TCP which is a connection-oriented protocol it guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmits the lost packets. 
+
+WebSocket: 
+WebSocket like HTTP/HTTPS sets standards in the application layer (L4). WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://. It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends. 
+
+When can a web socket be used: 
+ 
+• Real-time web application: Real-time web application uses a web socket to show the data at the client end, which is continuously being sent by the backend server. In WebSocket, data is continuously pushed/transmitted into the same connection which is already open, that is why WebSocket is faster and improves the application performance. 
+For e.g. in a trading website or bitcoin trading, for displaying the price fluctuation and movement data is continuously pushed by the backend server to the client end by using a WebSocket channel.
+ 
+• Gaming application: In a Gaming application, you might focus on that, data is continuously received by the server, and without refreshing the UI, it will take effect on the screen, UI gets automatically refreshed without even establishing the new connection, so it is very helpful in a Gaming application.
+ 
+• Chat application: Chat applications use WebSockets to establish the connection only once for exchange, publishing, and broadcasting the message among the subscribers. It reuses the same WebSocket connection, for sending and receiving the message and for one-to-one message transfer.
+
+
+
+Summary:
+In network model, we have deciding authority in only two layers when designing the system - Transport(L3) and Application layer(L4). Internet(L2) and Network Access(L1) layers are designed and maintained by networking team by the organization. 
+
+• At the transport layer(L3), you're likely to choose either the TCP or UDP protocol to send data. Choose TCP if you're more concerned with data accuracy, and UDP if quick transmission is needed (with tolerance for some errors - like in a video streaming application.)
+
+• At the application layer(L4), you have some choices to make as well. You'll probably choose HTTPS over HTTP for security reasons. If you need to maintain open client-server communications (for example, if you're building a fast-paced two-player game and you need to maintain up-to-date scores) you may choose WebSocket over HTTP. If you're designing a service with an API, consider HTTP (HTTPS) over WebSocket as you'll be able to make use of HTTPs standardized request methods and status codes; important if you're designing a RESTful API.
