@@ -26,11 +26,11 @@ While 0-225 is total of 256 devices, why only 224 devices, not 256? 192.168.1.0 
 
 
 TCP/IP vs OSI Model:
-In earlier times, Computers in the same network used packet switching to speak each other. But there is no protocol defined to let a computer from network A speak to another computer in network B. Because there is no standard defined. That’s where a meeting/committee sat and worked on defining a protocol to let the computer speak each other across the network. This is called networking model.
+In earlier times, Computers in the same network used packet switching to speak each other. But there was no protocol defined to let a computer from network A speak to another computer in network B. Because there is no standard defined. That’s where a meeting/committee sat and worked on defining a protocol to let the computer speak each other across the network. This is called networking model.
 
 When Apple or IBM or Microsoft makes computers, the model enforces to use the same technology so that all computers can interact with each other.
 
-There are well know two models were developed. 1 TCP/IP Model and 2. OSI model.
+There were well known two models were developed. 1 TCP/IP Model and 2. OSI model.
 
 TCP/IP Model  or stack uses four functions or layers. 
 1. Network Access  (L1)
@@ -54,7 +54,7 @@ Same as TCP/IP model but Network Access (aka Physical layer) in TCP/IP model is 
 	6. Presentation (L6)
 	7. Application (L7)
 
-But at the end the result is same, connecting devices across networks in internet.
+But at the end the result was same, connecting devices across networks in internet.
 
 TCP/IP Model is widely used today and all computer supports it. TCP/IP model killed OSI Model in the war of implementation, because it was simpler. OSI model is still being used but majorly in theoretical.
 
