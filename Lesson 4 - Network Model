@@ -44,7 +44,7 @@ TCP/IP Model  or stack uses four functions or layers.
 	
 OSI Model or stack uses seven functions or layers. 
 
-Same as TCP/IP model but Network Access (aka Physical layer) in TCP/IP model is dived into - Physical and Data Link. Application layer divided into three - Application + Presentation + Session. These introduction of additional 3 layers made OSI model to have total 7 layers. 
+Same as TCP/IP model but Network Access (aka Physical layer) in TCP/IP model is divided into - Physical and Data Link. Application layer divided into three - Application + Presentation + Session. These introduction of additional 3 layers made OSI model to have total 7 layers. 
 
 	1. Physical (L1)
 	2. Data Link(L2)
