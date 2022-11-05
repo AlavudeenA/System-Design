@@ -1,0 +1,29 @@
+Don't:
+	• A candidate who fails to take the lead on the discussion will likely be a no-hire
+	• The candidate didn't ask clarifying questions and/or failed to outline requirements before beginning the design.
+	
+Do:
+	• The candidate took the lead immediately and "checked in" regularly.
+	• If/when the interviewer asked to dive deeper into one or more areas, the candidate switched gears gracefully.
+	• The candidate identified appropriate, realistic non-functional requirements (e.g. business considerations like cost, serviceability) as well as functional requirements, and used both to define design constraints and guide decision-making.
+	• The high-level design was complete, component relationships were explained, and appropriate alternatives were discussed given realistic shifts in priorities.
+	• Bottlenecks were identified, alternatives were offered, and a quick summary of the pros and cons of each was given.
+
+System Design Framework:
+	Example questions to ask to Interviewer:  
+	1. What features of this system/product do we need to build? 
+	2. What scale will this system need to work. Ex: how many users will use the system
+	3. Edge case: Under what conditions should this system work. Ex: Bad network connectivity, database consistency, error handling
+	
+	High-level decisions: 
+		1. What framework to use if its an application
+		2. What database we will use
+		3. what kind of APIs
+		4. if more computation, do we need to parallelize the workload
+		5. monolithic or microservices etc.,
+	
+	Low-level decisions: 
+		1. Define interface between system
+		2. APIs between server and client
+		3. tables and indexes
+		4. background jobs etc.,
